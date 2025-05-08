@@ -22,7 +22,7 @@ _Teodoro Borges de Carvalho Neira_
 
 O sistema desenvolvido é uma **aplicação web**. O seu principal objetivo é **gerenciar tarefas**, contribuindo para a **organização** e **produtividade** do usuário. Isso é possível por meio da utilização de um **banco de dados**, armazenando as informações inseridas e permitindo a sua consulta. Além disso, o banco tabém permite a **filtração dos dados**, tornando a experiência mais personalizada.
 
-De uma forma geral, a aplicação web é voltada, primordialmente, para **estudantes** de **todas as idades**. Isso se deve ao fato do ambiente acadêmico requerir diversos entregas ao decorrer do curso, tornando a tarefa de gerenciamento algo **complicado** e **demorado**. No entanto, a aplicação também é capaz de suprir as necessidades de um **público em geral**, que necessita organizar os seus afazeres.
+De uma forma geral, a aplicação web é voltada para **estudantes** de **todas as idades**. Isso se deve ao fato do ambiente acadêmico requerer diversas entregas ao decorrer do curso, tornando a tarefa de gerenciamento algo **complicado** e **demorado**. Para isso, a aplicação é capaz de **registrar as tarefas**, contendo **título, descrição, data de início e fim**, além da **matéria referente**. Essa forma de entrada de dados **simplifica a visualização** dos afazeres, permitindo que o estudante se **organize** e tenha mais tempo para **dedicar-se ao estudos**.
 
 ---
 
@@ -35,7 +35,7 @@ De uma forma geral, a aplicação web é voltada, primordialmente, para **estuda
 <div align="center">
 </div>
 <br>
-<img src="../assets/persona.png">
+<img src="assets/persona.png">
 <sub>Produção Autoral </sub>
 <div align="center">
 <br>
@@ -73,9 +73,63 @@ De uma forma geral, a aplicação web é voltada, primordialmente, para **estuda
 
 ### 3.1. Modelagem do banco de dados (Semana 3)
 
-_Posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário._
+#### Modelo Relacional
 
-_Posicione também o modelo físico com o Schema do BD (arquivo .sql)_
+O diagrama relacional do banco de dados permite uma visualização concisa das estrutura de armazenamento de dados utilizadas. Para esse projeto, o modelo pode ser visto à seguir:
+
+<div align="center">
+<sub>Figura 2 - Modelo relacional do banco de dados </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/modeloRelacional.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
+
+As linhas registradas com uma chave representam _Primary Keys_. Ela identifica unicamente cada item da tabela, evitando repetições e possíveis problemas. O símbolo de impressão digital simboliza que a coluna não aceitará dados iguais. Por exemplo, não poderão dois nomes de usuário idênticos, evitando conflitos. Por fim, os losangos preenchidos e não preenchidos apresentam se o campo pode ou não pode receber nenhuma entrada.
+
+As linhas presentes no diagrama simbolizam as relações entre as tabelas. Elas ocorrem por meio das _Foreign Keys_, que trazem linhas de outras tabelas para a tabela desejada, criando uma relação de dependência.
+
+#### Modelo Físico
+
+O modelo físico do banco de dados pode ser visto adiante. Ele também está presente na [pasta raíz do projeto.](/modeloFisico.sql)
+
+```sql
+CREATE TABLE cursos (
+  cursoId SERIAL PRIMARY KEY,
+  nomeCurso VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE usuarios (
+  usuarioId SERIAL PRIMARY KEY,
+  nomeUsuario VARCHAR(255) NOT NULL UNIQUE,
+  nascimentoUsuario DATE NOT NULL,
+  cursoId INT NOT NULL,
+  FOREIGN KEY (cursoId) REFERENCES cursos(cursoId)
+);
+
+CREATE TABLE materias (
+  materiaId SERIAL PRIMARY KEY,
+  nomeMateria VARCHAR(255) NOT NULL UNIQUE,
+  cursoId INT NOT NULL,
+  FOREIGN KEY (cursoId) REFERENCES cursos(cursoId)
+);
+
+CREATE TABLE tarefas (
+  tarefaId SERIAL PRIMARY KEY,
+  nomeTarefa VARCHAR(255) NOT NULL,
+  descricaoTarefa TEXT NOT NULL,
+  status VARCHAR(255) NOT NULL,
+  dataInicio DATE NOT NULL,
+  dataFim DATE,
+  materiaId INT NOT NULL,
+  usuarioId INT NOT NULL,
+  FOREIGN KEY (materiaId) REFERENCES materias(materiaId),
+  FOREIGN KEY (usuarioId) REFERENCES usuarios(usuarioId)
+);
+```
 
 ### 3.1.1 BD e Models (Semana 5)
 
