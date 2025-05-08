@@ -88,13 +88,15 @@ O diagrama relacional do banco de dados permite uma visualização concisa das e
 <br>
 </div>
 
+Para o projeto escolhido, 4 tabelas foram criadas. A primeira delas é dos **cursos** existentes. É por meio do cursos que as **matérias** são definidas. Cada matéria está relacionada diretamente com um curso, permitindo que a aplicação consiga fornecer a lista de possíveis matérias de um aluno quando ele informar o seu curso. No entanto, uma mesma matéria pode aparecer em cursos diferentes. Esse problema é resolvido por meio das _Primary Keys_, que serão explicadas adiante. Depois, a tabela **usuários** tem a função de cadastrar aquele que está na plataforma, relacionando-o com o seu curso escolhido, além de outras informações básicas. Por fim, temos a tabela **tarefas**. Ela atua como a união entre os usuários e as matérias. Ou seja, cada tarefa registrada se refere à um usuário e matéria, além de conter outras informações essenciais, como status da atividade e data de finalização.
+
 As linhas registradas com uma chave representam _Primary Keys_. Ela identifica unicamente cada item da tabela, evitando repetições e possíveis problemas. O símbolo de impressão digital simboliza que a coluna não aceitará dados iguais. Por exemplo, não poderão dois nomes de usuário idênticos, evitando conflitos. Por fim, os losangos preenchidos e não preenchidos apresentam se o campo pode ou não pode receber nenhuma entrada.
 
 As linhas presentes no diagrama simbolizam as relações entre as tabelas. Elas ocorrem por meio das _Foreign Keys_, que trazem linhas de outras tabelas para a tabela desejada, criando uma relação de dependência.
 
 #### Modelo Físico
 
-O modelo físico do banco de dados pode ser visto adiante. Ele também está presente na [pasta raíz do projeto.](/modeloFisico.sql)
+O modelo físico do banco de dados pode ser visto adiante. Ele também está presente [aqui](/scripts/init.sql)
 
 ```sql
 CREATE TABLE cursos (
@@ -184,7 +186,5 @@ _Relacione também quaisquer outras ideias que você tenha para melhorias futura
 ## <a name="c5"></a>5. Referências
 
 _Incluir as principais referências de seu projeto, para que seu parceiro possa consultar caso ele se interessar em aprofundar. Um exemplo de referência de livro e de site:_<br>
-
----
 
 ---

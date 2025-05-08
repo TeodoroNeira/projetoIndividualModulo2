@@ -1,9 +1,9 @@
-CREATE TABLE cursos (
+CREATE TABLE IF NOT EXISTS cursos (
   cursoId SERIAL PRIMARY KEY,
   nomeCurso VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE usuarios (
+CREATE TABLE IF NOT EXISTS usuarios (
   usuarioId SERIAL PRIMARY KEY,
   nomeUsuario VARCHAR(255) NOT NULL UNIQUE,
   nascimentoUsuario DATE NOT NULL,
@@ -11,14 +11,14 @@ CREATE TABLE usuarios (
   FOREIGN KEY (cursoId) REFERENCES cursos(cursoId)
 );
 
-CREATE TABLE materias (
+CREATE TABLE IF NOT EXISTS materias (
   materiaId SERIAL PRIMARY KEY,
   nomeMateria VARCHAR(255) NOT NULL UNIQUE,
   cursoId INT NOT NULL,
   FOREIGN KEY (cursoId) REFERENCES cursos(cursoId)
 );
 
-CREATE TABLE tarefas (
+CREATE TABLE IF NOT EXISTS tarefas (
   tarefaId SERIAL PRIMARY KEY,
   nomeTarefa VARCHAR(255) NOT NULL,
   descricaoTarefa TEXT NOT NULL,
