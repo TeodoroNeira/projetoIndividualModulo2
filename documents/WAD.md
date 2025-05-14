@@ -151,7 +151,33 @@ _Adicione as setas e explicações sobre como os dados fluem entre o Model, Cont
 
 ### 3.3. Wireframes (Semana 03)
 
-_Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização)._
+**_Wireframes_**   contribuem para o planejamento da **interface do usuário**, reduzindo a necessidade de alterar protótipos constantemente durante o refinamento da experiência. Os _wireframes_ relacionados à esse projeto podem ser vistos à seguir:
+
+<div align="center">
+<sub>Figura X - Wireframe (Dashboard) </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/wireframeDashboard.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
+
+<div align="center">
+<sub>Figura X - Wireframe (Criar Tarefa) </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/wireframeCriarTarefa.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
+
+Ambos os **_wireframes_** buscam representar as **_user stories_** definidas. A primeira tela apresenta a **_dashboard_** do usuário, apresentando as **tarefas** e seus **prazos**, além de fornecer um botão para o **registro** de outras atividades. Ela está diretamente relacionada com a **US03**, trazendo um ambiente **simplificado** e **intuitivo** para o utilizador, facilitando a utilização da aplicação. Já a segunda tela demonstra a **criação de uma nova tarefa**, dialogando com a **US01**, que aborda o **registro das atividades**. O _wireframe_ demonstra o processo de registro, com campos para a inserção de **nome, descrição, matéria, status e agendamento** das tarefas.
+
+
 
 ### 3.4. Guia de estilos (Semana 05)
 
