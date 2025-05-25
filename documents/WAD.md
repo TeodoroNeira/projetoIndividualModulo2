@@ -135,19 +135,25 @@ CREATE TABLE tarefas (
 
 ### 3.1.1 BD e Models (Semana 5)
 
-_Descreva aqui os Models implementados no sistema web_
+Os models são a parte da aplicação web que possibilita a execução de consultas no banco de dados. Elas seguem os conceitos do CRUD (_Create, Read, Update e Delete_) para essas consultas. Dessa forma, somos capazes de consultar, adicionar, alterar e deletar dados do banco de dados.
+
+No caso desse sistema web, estão presentes 5 models. O primeiro deles é o dos cursos, que trata do cadastro e consuta dos cursos utilizados para a organização das tarefas da aplicação. O segundo é o das materias, que atua como uma subdivisão dos cursos, garantindo uma maior especifidade. A terceira é os usuários. Esse model é o responsável por criar, alterar e deletar novos usuários para o sistema, garantindo que as tarefas condizam com quem está utilizando a aplicação. Depois, temos o model das tarefas. Ele é a parte mais essencial, já que é por meio dele que conseguimos colocar as atividades que necessitam ser realizadas, o conceito essencial da solução. Por fim, temos o model do login, que serve para a autentificação dos usuários, com email e senha.
 
 ### 3.2. Arquitetura (Semana 5)
 
-_Posicione aqui o diagrama de arquitetura da sua solução de aplicação web. Atualize sempre que necessário._
+<div align="center">
+<sub>Figura 3 - Arquitetura da aplicação web </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/arquitetura.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
 
-**Instruções para criação do diagrama de arquitetura**
+A aplicação web utiliza-se da estrutura MVC para organização. Ela é dividida em 3 seções: **Model**, **View** e **Controller**. O Model é responsável pela comunicação e consultas com o banco de dados, tratando da atualização e inserção de informações. O Controller representa o backend da aplicação. Ele que realiza a ponte entre a interface e a comunicação com o banco de dados. Por fim, o View trata daquilo que o usuário interage, indicando o aspecto visual (frontend).
 
-- **Model**: A camada que lida com a lógica de negócios e interage com o banco de dados.
-- **View**: A camada responsável pela interface de usuário.
-- **Controller**: A camada que recebe as requisições, processa as ações e atualiza o modelo e a visualização.
-
-_Adicione as setas e explicações sobre como os dados fluem entre o Model, Controller e View._
 
 ### 3.3. Wireframes (Semana 03)
 
@@ -189,7 +195,208 @@ _Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelid
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
-_Utilize um link para outra página de documentação contendo a descrição completa de cada endpoint. Ou descreva aqui cada endpoint criado para seu sistema._
+Os endpoints do projeto podem ser testados por meio do _Postman_, ou outra ferramenta similar.
+
+#### **localhost:3000/api/login**
+
+**POST**
+
+**Exemplo de entrada JSON:**
+```json
+{
+  "email": "teste@teste.com.br",
+  "senha": "123123"
+}
+```
+
+---
+
+#### **localhost:3000/api/cursos**
+
+**GET**  
+ Retorna todos os cursos cadastrados.
+
+**POST**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+  {
+    "cursoid": "2",
+    "nomecurso": "Engenharia de Software"
+  }
+  ```
+
+---
+
+#### **localhost:3000/api/cursos/:id**
+
+**PUT**  
+
+**Exemplo de entrada JSON:**
+```json
+{
+  "cursoid": "1",
+  "nomecurso": "Novo Nome do Curso"
+}
+```
+
+**DELETE**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+{
+  "cursoid": "1"
+}
+  ```
+
+---
+
+#### **localhost:3000/api/usuarios**
+
+**GET**  
+ Retorna todos os usuários cadastrados (sem o campo senha).
+
+**POST**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+  {
+    "usuarioid": 2,
+    "nomeusuario": "Usuário de Teste 2",
+    "nascimentousuario": "2000-01-01",
+    "cursoid": 1,
+    "senha": "123123",
+    "email": "teste2@teste.com.br"
+  }
+  ```
+
+---
+
+#### **localhost:3000/api/usuarios/:id**
+
+**PUT**  
+
+**Exemplo de entrada JSON:**
+```json
+{
+  "usuarioid": 2,
+    "nomeusuario": "Usuário de Teste 2",
+    "nascimentousuario": "2000-01-01",
+    "cursoid": 1,
+    "senha": "123123",
+    "email": "teste2@teste.com.br"
+}
+```
+
+**DELETE**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+{
+  "usuarioid": "1"
+}
+  ```
+---
+
+#### **localhost:3000/api/materias**
+
+ **GET**  
+ Retorna todas as matérias cadastradas.
+
+
+**POST**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+{
+"materiaid": "2",
+"nomemateria": "Matemática",
+"cursoid": "2"
+}
+  ```
+
+---
+
+#### **localhost:3000/api/materias/:id**
+
+**PUT**  
+
+**Exemplo de entrada JSON:**
+```json
+{
+  "materiaid": "2",
+  "nomemateria": "Matemática",
+  "cursoid": "2"
+}
+```
+
+**DELETE**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+{
+  "materiaid": "1"
+}
+  ```
+---
+
+#### **localhost:3000/api/tarefas**
+
+ **GET**  
+ Retorna todas as tarefas cadastradas.
+
+
+**POST**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+  {
+    "tarefaid": 1,
+    "nometarefa": "Estudar para prova",
+    "descricaotarefa": "Revisar capítulos 1 a 3",
+    "status": "pendente",
+    "datainicio": "2024-06-01",
+    "datafim": "2024-06-10",
+    "materiaid": 1,
+    "usuarioid": 2
+  }
+  ```
+
+---
+
+#### **localhost:3000/api/tarefas/:id**
+
+**PUT**  
+
+**Exemplo de entrada JSON:**
+```json
+{
+  "tarefaid": 1,
+  "nometarefa": "Estudar para prova",
+  "descricaotarefa": "Revisar capítulos 1 a 3",
+  "status": "pendente",
+  "datainicio": "2024-06-01",
+  "datafim": "2024-06-10",
+  "materiaid": 1,
+  "usuarioid": 2
+}
+```
+
+**DELETE**  
+
+ **Exemplo de entrada JSON:**
+  ```json
+{
+  "tarefaid": "1"
+}
+  ```
+---
+
+
+
+
+
+
 
 ### 3.7 Interface e Navegação (Semana 07)
 

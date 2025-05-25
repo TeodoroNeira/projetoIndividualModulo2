@@ -37,6 +37,28 @@ npm install
 
 Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente conforme apresentado pelo banco de dados.
 
+4. **Inicializar o banco de dados**
+
+No terminal, digite o seguinte comando:
+
+```bash
+npm run init-db
+```
+
+Ele criará o banco de dados no seu servidor.
+
+5. **Iniciar o servidor**
+
+O servidor pode ser incializado com o comando:
+
+```bash
+npm run start
+```
+
+6. **Testar os endpoints**
+
+Para informações de como testar os _endpoints_, acesse o arquivo WAD.md, na pasta /documents.
+
 ## Estrutura de Diretórios
 
 - **`assets/`**: Arquivos públicos, como imagens e fontes.

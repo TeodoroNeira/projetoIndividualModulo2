@@ -8,6 +8,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
   nomeUsuario VARCHAR(255) NOT NULL UNIQUE,
   nascimentoUsuario DATE NOT NULL,
   cursoId INT NOT NULL,
+  senha VARCHAR(255) NOT NULL, 
+  email VARCHAR(255) NOT NULL UNIQUE,
   FOREIGN KEY (cursoId) REFERENCES cursos(cursoId)
 );
 
