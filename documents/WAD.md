@@ -187,11 +187,44 @@ Ambos os **_wireframes_** buscam representar as **_user stories_** definidas. A 
 
 ### 3.4. Guia de estilos (Semana 05)
 
-_Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução._
+O material visto à seguir é o guia de estilos do projeto. Ele indica as cores utilizadas, opções de formatação e tipografia, além de componentes. É com base nele que a padronização das interfaces do projeto ocorrem.
+
+<div align="center">
+<sub>Figura X - Guia de estilos </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/guiaEstilos.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
+
+
 
 ### 3.5. Protótipo de alta fidelidade (Semana 05)
 
-_Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização)._
+<div align="center">
+<sub>Figura X - Protótipo Dashboard </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/prototipoDashboard.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
+
+<div align="center">
+<sub>Figura X - Protótipo Criar Tarefa </sub>
+<div align="center">
+</div>
+<br>
+<img src="assets/prototipoCriar.png">
+<sub>Produção Autoral </sub>
+<div align="center">
+<br>
+</div>
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
