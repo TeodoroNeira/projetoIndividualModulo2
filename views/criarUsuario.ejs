@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Usuário - TaskTrack</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/criarUsuario.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1>Criar usuário</h1>
+      <div class="yellow-bar"></div>
+    </header>
+    <div class="user-card">
+      <form id="criarUsuarioForm">
+        <div class="form-user">
+          <input type="text" id="nomeusuario" name="nomeusuario" placeholder="Nome de usuário" required>
+          <input type="email" id="email" name="email" placeholder="E-mail" required>
+          <input type="password" id="senha" name="senha" placeholder="Senha" required>
+          <input type="date" id="nascimentousuario" name="nascimentousuario" placeholder="Data de nascimento" required>
+          <select id="cursoid" name="cursoid" required>
+            <option value="">Curso</option>
+          </select>
+          <div class="form-actions">
+            <button type="button" id="cancelarBtn" class="btn-cancel">Cancelar</button>
+            <button type="submit" class="btn-yellow">Criar</button>
+          </div>
+          <div id="errorDiv" class="error-message" style="display:none"></div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="/scripts/criarUsuario.js"></script>
+</body>
+</html>

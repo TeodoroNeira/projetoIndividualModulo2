@@ -55,9 +55,9 @@ O servidor pode ser incializado com o comando:
 npm run start
 ```
 
-6. **Testar os endpoints**
+6. **Acessar a aplicação**
 
-Para informações de como testar os _endpoints_, acesse o arquivo WAD.md, na pasta /documents.
+Em seu navegador de preferência, acesse localhost:3000
 
 ## Estrutura de Diretórios
 

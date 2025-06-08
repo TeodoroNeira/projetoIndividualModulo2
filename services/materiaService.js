@@ -34,9 +34,20 @@ const deletarMateria = async (materiaid) => {
     }
 }
 
+const consultarMateriasPorCurso = async (cursoid) => {
+    try {
+        const result = await db.query('SELECT * FROM materias WHERE cursoid = $1', [cursoid]);  
+        return result.rows;
+    }
+    catch (error) {
+        throw new Error('Erro ao consultar matérias por curso: ' + error.message);
+    }
+}
+
 module.exports = {
     consultarMaterias,
     criarMateria,
     atualizarMateria,
-    deletarMateria
+    deletarMateria,
+    consultarMateriasPorCurso
 }

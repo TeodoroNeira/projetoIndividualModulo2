@@ -1,0 +1,146 @@
+@import url('./global.css');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+body {
+    background: #fff;
+ 
+}
+
+.main-content, .calendar-container {
+    margin-left: 3400px; 
+
+}
+
+.calendar-container {
+    width: calc(100vw - 340px);  
+    max-width: 1200px;
+    margin: 2rem 0 2rem 320px;    
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 2rem 2rem 2rem 2.5rem;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#prev-month, #next-month {
+    background: none;
+    color: #292A2E;
+    border: none;
+    border-radius: 0;
+    font-size: 1.3rem;
+    padding: 0 4px;
+    min-width: unset;
+    min-height: unset;
+    line-height: 1;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: none;
+    transition: color 0.2s;
+    outline: none;
+}
+
+#prev-month:hover, #next-month:hover {
+    color: #FFF537;
+    background: none;
+}
+
+.calendar-header span {
+    color: #292A2E;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: none;
+    padding: 0 10px;
+    flex: 1;
+    text-align: center;
+    display: block;
+    font-family: 'Lexend', Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.calendar-weekday {
+    text-align: center;
+    font-weight: 600;
+    color: #292A2E;
+    padding-bottom: 4px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    width: 100%;
+}
+
+.calendar-day {
+    min-height: 70px;
+    max-width: unset;     
+    width: 100%;
+    background: #F3F3F3;
+    border-radius: 8px;
+    padding: 4px 2px;
+    position: relative;
+    transition: background 0.2s;
+    border: none;
+    box-sizing: border-box;
+}
+
+.calendar-day.has-task {
+    background: #fff;
+    border: 2px solid #FFF537;
+    box-shadow: 0 2px 8px #292A2E22;
+    transition: box-shadow 0.2s, border 0.2s;
+    position: relative;
+}
+
+.calendar-day.has-task:hover {
+    box-shadow: 0 4px 16px #292A2E33;
+    border-color: #292A2E;
+    z-index: 2;
+}
+
+.calendar-day.empty {
+    background: transparent;
+    border: none;
+}
+
+.day-number {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.tasks-list {
+    margin-top: 4px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.task-item {
+    background: #FFF537;
+    color: #292A2E;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    width: 100%;           
+    display: block;
+    white-space: normal;
+    word-break: break-word;
+    overflow: visible;
+    border: none;
+    font-weight: 600;   
+    font-family: 'Lexend', Arial, sans-serif;
+    box-shadow: 0 1px 4px #292A2E11;
+    transition: background 0.2s, color 0.2s;
+}

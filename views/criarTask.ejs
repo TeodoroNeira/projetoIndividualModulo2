@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <input type="hidden" id="userId" value="<%= usuarioid %>">
+  <title>Criar Tarefa - TaskTrack</title>
+  <link rel="stylesheet" href="/styles/sidebar.css">
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/criarTask.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <%- include('partials/sidebar') %>
+  <main>
+    <header class="page-header">
+      <h1>Nova tarefa:</h1>
+      <div class="yellow-bar"></div>
+    </header>
+    <div class="task-card">
+      <form id="criarTaskForm">
+        <div class="form-left">
+          <input type="text" id="nometarefa" name="nometarefa" placeholder="Nome da tarefa" required>
+          <textarea id="descricaotarefa" name="descricaotarefa" placeholder="Descrição..." required></textarea>
+          <select id="materiaid" name="materiaid" required>
+            <option value="">Matéria</option>
+          </select>
+          <div class="form-actions">
+            <button type="button" id="cancelarBtn" class="btn-cancel">Cancelar</button>
+            <button type="submit" class="btn-yellow">Criar</button>
+          </div>
+        </div>
+        <div class="form-right">
+          <div class="date-range">
+            <input 
+              type="text" 
+              id="calendario" 
+              name="calendario" 
+              placeholder="Selecione uma data:" 
+              class="flatpickr-input"
+              readonly
+            >
+            <input type="hidden" id="datainicio" name="datainicio">
+            <input type="hidden" id="datafim" name="datafim">
+          </div>
+        </div>
+        <div id="errorDiv" class="error-message" style="display:none"></div>
+      </form>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="/scripts/criarTask.js"></script>
+</body>
+</html>

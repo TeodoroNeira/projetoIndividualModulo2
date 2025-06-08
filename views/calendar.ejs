@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/styles/calendar.css">
+<link rel="stylesheet" href="/styles/sidebar.css">
+<%- include('partials/sidebar') %>
+<div class="calendar-container">
+    <h2>Calendário de Tarefas</h2>
+    <div id="calendar"></div>
+</div>
+<input type="hidden" id="userId" value="<%= usuarioid %>">
+<script src="/scripts/calendar.js"></script>

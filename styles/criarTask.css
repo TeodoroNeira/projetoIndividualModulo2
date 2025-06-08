@@ -1,0 +1,204 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.yellow-corner {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 180px solid #FFF537;
+  border-top: 180px solid transparent;
+}
+
+.main-content {
+  flex: 1;
+  padding: 0;
+  margin-left: 320px; 
+}
+
+
+.main-content h2 {
+  font-family: 'Lexend', Arial, sans-serif;
+  font-size: 2.2rem;
+  color: #292A2E;
+  font-weight: bold;
+  margin-top: 48px;
+  margin-left: 60px;
+  margin-bottom: 0.5rem;
+}
+
+
+.task-card {
+  background: #F6F6F6;
+  border-radius: 14px;
+  box-shadow: 1px 2px 8px rgba(41,42,46,0.08);
+  border: 1.5px solid #292A2E22;
+  width: 900px;
+  margin: 40px auto 0 auto;
+  padding: 48px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px; 
+}
+
+#criarTaskForm {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.form-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: flex-start;
+}
+
+.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  position: relative;
+}
+
+input[type="text"], select {
+  font-family: 'Lexend', Arial, sans-serif;
+  font-size: 1.1rem;
+  border: 1.5px solid #C0C0C0;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  background: #fff;
+  color: #292A2E;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+input[type="date"] {
+  border: none;
+  
+  background: transparent;
+ 
+  box-shadow: none;
+}
+
+textarea {
+  font-family: 'Lexend', Arial, sans-serif;
+  font-size: 1.1rem;
+  border: 1.5px solid #C0C0C0;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  background: #fff;
+  color: #292A2E;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 70px;
+  max-height: 200px;
+ 
+  overflow-x: hidden;
+}
+
+.date-range {
+  display: flex;
+  align-items: flex-start; 
+  gap: 10px;
+  width: 100%;
+  margin-top: 0;           
+}
+
+.date-range input[type="date"] {
+  width: 45%;
+}
+
+
+.date-range input,
+.date-range .flatpickr-input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+.arrow {
+  font-size: 1.5rem;
+  color: #292A2E;
+  font-weight: bold;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.btn-yellow {
+  background: #FFF537;
+  color: #292A2E;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-yellow:hover {
+  background: #e6d700;
+}
+
+.btn-cancel {
+  background: #fff;
+  color: #292A2E;
+  border: 1.5px solid #C0C0C0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #F3F3F3;
+}
+
+.error-message {
+  color: #fff;
+  background: #ff4d4d;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.inRange {
+  background: #FFF537 !important;
+  color: #292A2E !important;
+  border-color: #FFF537 !important;
+}
+
+
+
+

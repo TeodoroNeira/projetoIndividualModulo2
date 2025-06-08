@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #fff !important; 
+    color: #222;
+}
+
+.tarefas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 32px;
+    margin-top: 32px;
+}
+
+.card-tarefa {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px #0001;
+    padding: 28px 24px 20px 24px;
+    min-width: 340px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+    margin-bottom: 8px;
+}
+
+.card-tarefa:hover {
+    box-shadow: 0 8px 24px #ffe60055;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.card-desc {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+.mini-calendar {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px 8px 4px 8px;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px #0001;
+    margin-top: 8px;
+    margin-bottom: 0;
+    border: 2px solid #ccc; 
+}
+
+.mini-calendar .calendar-month {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+    text-transform: capitalize
+}
+
+.mini-calendar .calendar-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-top: 2px;
+}
+
+.mini-calendar .calendar-day {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 2px;
+    text-align: center;
+    border-radius: 6px;
+    background: transparent;
+    color: #222;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.mini-calendar .calendar-day.active {
+    background: #ffe600;
+    color: #222;
+    font-weight: bold;
+    box-shadow: 0 1px 2px #ffe60044;
+}
+
+.no-tasks-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+    margin: 40px 0;
+}
+

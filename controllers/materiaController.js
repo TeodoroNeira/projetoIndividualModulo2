@@ -45,9 +45,23 @@ const deletarMateria = async (req, res) => {
     }
 }
 
+const consultarMateriasPorCurso = async (req, res) => {
+    try {
+        const { cursoid } = req.query;
+        if (!cursoid) {
+            return res.status(400).json({ message: 'Curso não informado!' });
+        }
+        const materias = await materiaService.consultarMateriasPorCurso(cursoid);
+        res.status(200).json(materias);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 module.exports = {
     criarMateria,
     consultarMaterias,
     atualizarMateria,
-    deletarMateria
+    deletarMateria,
+    consultarMateriasPorCurso
 }

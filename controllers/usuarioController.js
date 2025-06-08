@@ -9,11 +9,11 @@ const consultarUsuarios = async (req, res) => {
 };
 const criarUsuario = async (req, res) => {
     try {
-        const { usuarioid, nomeusuario, nascimentousuario, cursoid, senha, email } = req.body;
-        if (!usuarioid || !nomeusuario || !nascimentousuario || !cursoid || !senha || !email) {
+        const { nomeusuario, nascimentousuario, cursoid, senha, email } = req.body;
+        if (!nomeusuario || !nascimentousuario || !cursoid || !senha || !email) {
             return res.status(400).json({ message: 'Entrada inválida!' });
         }
-        const novoUsuario = await usuarioService.criarUsuario(usuarioid, nomeusuario, nascimentousuario, cursoid, senha, email);
+        const novoUsuario = await usuarioService.criarUsuario(nomeusuario, nascimentousuario, cursoid, senha, email);
         res.status(201).json(novoUsuario);
     } catch (error) {
         res.status(500).json({ errsor: error.message });
@@ -44,9 +44,26 @@ const deletarUsuario = async (req, res) => {
     }
 }
 
+const consultarUsuarioPorId = async (req, res) => {
+    try {
+        const { usuarioid } = req.query;
+        if (!usuarioid) {
+            return res.status(400).json({ message: 'Usuário não informado!' });
+        }
+        const usuario = await usuarioService.consultarUsuarioPorId(usuarioid);
+        if (!usuario) {
+            return res.status(404).json({ message: 'Usuário não encontrado!' });
+        }
+        res.status(200).json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 module.exports = {
     consultarUsuarios,
     criarUsuario,
     atualizarUsuario,
-    deletarUsuario
+    deletarUsuario,
+    consultarUsuarioPorId
 }
